@@ -1,6 +1,7 @@
 Hi there - thanks for reviewing my submission for the challenge to test the robotic vacuum cleaner service.  
 
 Prereq: Service is running locally on port 8080
+
 To run:
 1. Clone this repository and `cd` in to it
 2. `npm i` to install dependencies
