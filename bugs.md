@@ -88,7 +88,7 @@
    Steps to reproduce: set room size or patches as a negative number
       ```
        curl -X POST 'http://localhost:8080/v1/cleaning-sessions' --header 'Content-Type: application/json' --data-raw '{ "roomSize": [-2, 3], "coords": [1, 2], "patches": [[-1, 0]], "instructions": "WSE" }'
-       ```
+      ```
       Expected: `Status Code: 400`
 
       Actual: `{"coords":[0,1],"patches":2}`
