@@ -1,8 +1,9 @@
 ## Bugs
 1. Patch cleaned count increments sporadically 
    
-   Description: Dirt patch count is incorrect for many scenarios.  This is a tricky bug to track down exactly what's happening without being able to see the source code
+   Description: Dirt patch count is incorrect for many scenarios.  This is a tricky bug to track down exactly what's happening without being able to see the source code.  I believe the issue is that a patch of dirt is added to the cleaned count any time the sum of the vacuum position's coordinates modulo 0 the sum of the patch coordinates.  
 
+    ```Scenario("can end on a patch of dirt")```
     ```Scenario("returns no patches when none were cleaned")```
     
     Steps to reproduce:
@@ -14,9 +15,9 @@
    ## Interesting to note that directions "N" will also reproduce an extra patch to the count, but directions "E" or "S" properly return 0 patches cleaned
 &nbsp;
 
-2. Title:Cleaned patch of dirt is counted more than once.
+1. Title:Cleaned patch of dirt is counted more than once.
    
-   Description: If the vacuum drives over a patch of dirt that has previously been cleaned, the service should not count that as an additional patch in the returned response.
+   Description: If the vacuum drives over a patch of dirt that has previously been cleaned, the service should not count that as an additional patch in the returned response.  This test case is always needed, but could be a result of bug 1
 
    ```Scenario("does not count cleaned patch twice")```
 
